@@ -1,0 +1,7 @@
+{|
+! Actor !! Description
+|-
+| Student || A student is a user who uses the Game of Phones application on their mobile device in a class in order to answer questions
+|-
+| Teacher || A teacher is a user who uses the Game of Phones application on a terminal in order to create questions for students to answer in class
+|}
