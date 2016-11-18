@@ -1,0 +1,9 @@
+I put these in my public.html folder so currently you can access them under
+
+mcs.drury.edu/amerritt/[functionname]
+
+For example, createDeviceID is at mcs.drury.edu/amerritt/createDeviceID.php
+
+If you get any PHP errors while you're trying to code, let me know so I can fix them.
+
+--Amelia
