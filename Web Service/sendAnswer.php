@@ -24,17 +24,18 @@
 		$manager->disconnect();
 		
          if($result){
-        $json = array("status" => 1, "msg" => "Action completed");
+        $jsonStatus[] = array("status" => 1, "msg" => "Action completed");
             }
          else{
-        $json = array("status" => 0, "msg" => "Error");
+        $jsonStatus[] = array("status" => 0, "msg" => "Error");
             }
 	}
        
        else{ // method not POST
-        $json = array("status" => 0, "msg" => "Request method not accepted");
+        $jsonStatus[] = array("status" => 0, "msg" => "Request method not accepted");
         }
-    
+    $json = array("errstatus" => $jsonStatus);
+
     /* Output header */
  header('Content-type: application/json');
  echo json_encode($json);
