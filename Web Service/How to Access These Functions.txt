@@ -1,0 +1,9 @@
+We created a folder on the server for our project so these functions are now under
+
+mcs.drury.edu/GameOfPhones/[functionname]
+
+For example, createDeviceID is at mcs.drury.edu/GameOfPhones/createDeviceID.php
+
+If you get any PHP errors while you're trying to code, let me know so I can fix them.
+
+--Amelia
