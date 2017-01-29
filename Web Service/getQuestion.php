@@ -22,7 +22,7 @@
 		$resultArray = array();
         while($row = $result->fetch()) {
             extract($row);
-            $resultArray[] = array("q_id" => $q_id, "q_text" => $q_text, "q_type" => $q_type, "q_correct_id" => $q_correct_id);
+            $resultArray[] = array("q_id" => $q_id, "q_text" => $q_text, "q_type" => $q_type, "q_correct_id" => $q_correct_id, "p_filename" => $p_filename);
 		} 
              // disconnect
 		$manager->disconnect();

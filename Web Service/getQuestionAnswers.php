@@ -10,7 +10,7 @@
   
        if(!empty($questionID)){
        //set up query
-       	$query = 'select a_id, a_text from multanswers natural join answers where q_id =' . $questionID . ';';
+       	$query = 'select a_id, a_text, p_filename from multanswers natural join answers where q_id =' . $questionID . ';';
         //$values = array($memberFirstName, $memberLastName);
            
 		$manager->connect();
@@ -22,7 +22,7 @@
 		$resultArray = array();
         while($row = $result->fetch()) {
             extract($row);
-            $resultArray[] = array("a_id" => $a_id, "a_text" => $a_text);
+            $resultArray[] = array("a_id" => $a_id, "a_text" => $a_text, "p_filename" => $p_filename);
 		} 
              // disconnect
 		$manager->disconnect();
