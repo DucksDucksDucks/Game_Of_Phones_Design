@@ -4,6 +4,8 @@
 
    $manager = new DataManager;
 
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+
 // list fields
     
     $deviceID = $_POST['deviceID'];
@@ -34,6 +36,10 @@
        else{
            $json = array("status" => 0, "msg" => "Input not defined");
        }
+}
+       else{ // method not POST
+        $json = array("status" => 0, "msg" => "Request method not accepted");
+        }
     
     /* Output header */
  header('Content-type: application/json');

@@ -6,8 +6,6 @@
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
     
-  
-    // $movieTitle = $_POST['title'];  
     
     $deviceID = $_POST['deviceID'];
     $questionID = $_POST['questionID'];

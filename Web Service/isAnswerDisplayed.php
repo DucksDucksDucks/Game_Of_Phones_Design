@@ -8,12 +8,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 // list fields
     
+    $deviceID = $_POST['deviceID'];
     $questionID = $_POST['questionID'];
   
-       if(!empty($questionID)){
+       if(!empty($deviceID)){
        //set up query
-       	$query = 'select a_id, a_text, p_filename from multanswers natural join answers where q_id =' . $questionID . ';';
-        //$values = array($memberFirstName, $memberLastName);
+       	$query = 'select displayed from submittedanswers where p_device_id =' . $deviceID . ' and q_id = ' .$questionID .';';
            
 		$manager->connect();
              
@@ -24,12 +24,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$resultArray = array();
         while($row = $result->fetch()) {
             extract($row);
-            $resultArray[] = array("a_id" => $a_id, "a_text" => $a_text, "p_filename" => $p_filename);
+            $resultArray[] = array("displayed" => $displayed);
 		} 
              // disconnect
 		$manager->disconnect();
              
-        $json = array("question_answers" => $resultArray);
+        $json = array("answer_info" => $resultArray);
             }
         else {$json = array("status" => 0, "msg" => "Not result");}
        }
@@ -37,7 +37,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
            $json = array("status" => 0, "msg" => "Input not defined");
        }
 }
-
        else{ // method not POST
         $json = array("status" => 0, "msg" => "Request method not accepted");
         }
